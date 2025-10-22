@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>じゃんけん</title>
+
+        <!-- CSS読み込み -->
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- jQuery読み込み -->
+        <script src="js/jquery-3.7.1.min.js"></script>
+    </head>
+<body>
+<header>
+    <h1>じゃんけん</h1>
+</header>
+
+<main>
+    <div class="card">
+        <ul class="choices">
+            <li id="gu" class="choice-btn">✊ グー</li>
+            <li id="choki" class="choice-btn">✌️ チョキ</li>
+            <li id="pa" class="choice-btn">✋ パー</li>
+        </ul>
+        <div class="result-area">
+            <div>
+                コンピュータの手：「<span id="pc-hand">まだ選んでいません</span>」
+            </div>
+            <div id="result" class="result">手を選んでください</div>
+        </div>
+    </div>
+</main>
+
+<script>
+// じゃんけんアプリ概要 -----------------------------------------------
+// 
+// 【基本機能】
+// - プレイヤーがグー・チョキ・パーのボタンをクリックできる
+// - コンピュータがランダムに手を選ぶ
+// - 勝敗を判定して結果を表示する
+// - 結果に応じて色分け表示する
+// 
+// 【画面構成】
+// - #gu ボタン: グーを選択
+// - #choki ボタン: チョキを選択  
+// - #pa ボタン: パーを選択
+// - #pc-hand: コンピュータの手を表示
+// - #result: 勝敗結果を表示
+// 
+// ---------------------------------------------------------------
+
+// じゃんけんゲームの JavaScript を記述してください！
+
+// グーボタンが押されるとランダムに0,1,2が選択される
+$("#gu").click(function(){
+    const num = Math.floor(Math.random() * 3)
+    console.log(num)
+// 0ならグー、1ならチョキ、2ならパーをコンピュータの手に表示、勝敗を結果に表示
+    if(num === 0){
+        console.log("グー")
+        $("#pc-hand").html("グー")
+        $("#result").html("あいこ")
+    }else if(num === 1){
+        console.log("チョキ")
+        $("#pc-hand").html("チョキ")
+        $("#result").html("勝ち")
+    }else if(num === 2){
+        console.log("パー")
+        $("#pc-hand").html("パー")
+        $("#result").html("負け")
+    }
+})
+
+// チョキボタンが押されるとランダムに0,1,2が選択される
+$("#choki").click(function(){
+    const num = Math.floor(Math.random() * 3)
+    console.log(num)
+// 0ならグー、1ならチョキ、2ならパーをコンピュータの手に表示、勝敗を結果に表示
+    if(num === 0){
+        console.log("グー")
+        $("#pc-hand").html("グー")
+        $("#result").html("負け")
+    }else if(num === 1){
+        console.log("チョキ")
+        $("#pc-hand").html("チョキ")
+        $("#result").html("あいこ")
+    }else if(num === 2){
+        console.log("パー")
+        $("#pc-hand").html("パー")
+        $("#result").html("勝ち")
+    }
+})
+
+// パーボタンが押されるとランダムに0,1,2が選択される
+$("#pa").click(function(){
+    const num = Math.floor(Math.random() * 3)
+    console.log(num)
+// 0ならグー、1ならチョキ、2ならパーをコンピュータの手に表示、勝敗を結果に表示
+    if(num === 0){
+        console.log("グー")
+        $("#pc-hand").html("グー")
+        $("#result").html("勝ち")
+    }else if(num === 1){
+        console.log("チョキ")
+        $("#pc-hand").html("チョキ")
+        $("#result").html("負け")
+    }else if(num === 2){
+        console.log("パー")
+        $("#pc-hand").html("パー")
+        $("#result").html("あいこ")
+    }
+})
+
+
+// クリックした手とコンピュータの手で勝ち負けを判定する
+// 判定結果を表示する
+// 結果毎に色をつける
+
+</script>
+</body>
+</html>
